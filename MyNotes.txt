@@ -1,0 +1,203 @@
+ Data Analysis Projects : https://www.youtube.com/watch?v=TM4O9x8kBvg
+1.Prediction Model
+2.Data Analysis using Python
+3.SQL Data Analysis
+4.Power BI Dashboard Project
+5.Time Series Forecasting
+
+--------------------------------------------------------------------------------------
+Hacking : Hacker101 website
+--------------------------------------------------------------------------------------
+Data Engineering Books and Projects: 
+Books -: https://github.com/letthedataconfess/Data-Engineering-Books/blob/main/Book-5Kimball_The-Data-Warehouse-Toolkit-3rd-Edition-5.pdf
+Projects -: https://www.knowledgehut.com/blog/data-science/data-engineering-projects
+Google Learning Resources -: https://cloud.google.com/learn/training/data-engineering-and-analytics
+
+Free UX Design Course: https://learnuiux.in/
+
+Website design rule: 80/20 rule
+ Discovery > User Research > Market Research > Content > Design >>> Code
+
+
+Power BI project: CREDIT CARD CUSTOMER REPORT AND CREDIT CARD TRANSACTION REPORT (Credit Card Financial Dashboard)
+1.Project Overview
+Project Objective: To develop a comprehensive credit card dashboard that provides real time insights into key performance metrices and trends, enabling stakeholders to monitor and analyse credit card operations effectively.
+
+2.Data Extraction
+Import data into SQL Database
+1.Prepare CSV files
+Credit Card.csv =18 columns
+Average utilization ratio =  revolving Balance / credit limit .Lesser Average utilization ratio  means good customer
+use chip = how you used card for making  transaction (swipe, online , chip)
+Expenditure type = Where did you spend.(Bills, food, entertainment..)
+Interest = How much did it go to the bank
+Delinquest account = Default account ( users unable to pay back credit)
+
+Customer.csv = columns
+
+2.Create tables in SQL
+3.Import CSV file to SQL
+       
+
+
+3.Data Processing and DAX Query
+In cust_details table create new column:
+AgeGroyp = SWITCH( 
+    TRUE(),
+    cust_detail[Customer_Age]<30,"less than 30",
+    cust_detail[Customer_Age]>=30 && cust_detail[Customer_Age] <40, "30-40",
+    cust_detail[Customer_Age]>=40 && cust_detail[Customer_Age] <50, "40-50",
+    cust_detail[Customer_Age]>=50 && cust_detail[Customer_Age] <60, "50-60",
+    cust_detail[Customer_Age]>=60,"60+",
+    "unknown"
+    ) 
+IncomeGroup = SWITCH(TRUE(),
+ cust_detail[Income]<35000,"Low",
+ cust_detail[Income]>=35000 && cust_detail[Income]<70000,"Medium",
+ cust_detail[Income]>=70000,"High",
+ "Unknown"
+
+ )
+
+
+In cc_details create new columns:
+Revenue = cc_detail[Annual_Fees]+ cc_detail[Total_Trans_Amt]+cc_detail[Interest_Earned] 
+
+week_num2 = WEEKNUM(cc_detail[Week_Start_Date])
+
+To calculate week on week revencue, (to get revenue of the current week)...i.e create 2 measures of current week and previous week
+
+Current_week_revenue = CALCULATE(
+    SUM(cc_detail[Revenue]),
+    FILTER(
+        ALL(cc_detail),
+        cc_detail[week_num2]=MAX(cc_detail[week_num2])))
+
+Previous_week_Revenue = CALCULATE(
+    SUM(cc_detail[Revenue]),
+    FILTER(
+        ALL(cc_detail),
+        cc_detail[week_num2]=MAX(cc_detail[week_num2])-1)) 
+
+To calculate week over week revenue,
+wow_revenue = DIVIDE(([Current_week_revenue]-[Previous_week_Revenue]),[Previous_week_Revenue])
+
+
+
+4.Dashboard and Insights
+
+Credit card financial dashboard using powerbi
+ 
+developed and interactive dashboard using transaction and customer data from SQL database to provide real time insights
+ streamlined data processing and analysis to monitor Ki performance mattresses and trends
+ shared actionable insights which take holders based on dashboard findings to support decision making. 
+
+GUIDED BY : Rishabh Mishra
+
+
+
+
+
+
+
+
+
+PROFESSIONAL SUMMMERY
+
+
+Highly motivated and professional Executive Secretary with over 7 years of experience providing high-level support to senior executives. Proficient in managing calendars, organizing meetings and events, handling confidential documents, and communicating with internal and external stakeholders. Possess exceptional communication and interpersonal skills with a proven ability to work independently and as part of a team.
+
+Enthusiastic and self-motivated web designer with 5+ years of experience. Eager to join Studio Shodwe and bring my skill in frontend development, and visual design to every project that will be received in the future. A previous project for improving and redesigning reallygreatsite.com resulted in an increase in web traffic by 50% and performance improvement by 20%.
+
+I am a highly passionate individual who thrives upon seeking new challenges through my career. I am motivated  to work on a challenging and dynamic environment, and to keep value adding for the organization which I serve and represent myself to contribute to best of my abilities.
+
+
+
+Enthusiastic and self-motivated individual who thrives upon seeking new challenges. Results-Driven Business Analyst with a year of experience as a functional consultant and providing high-level support to stakeholders. I excel in communication and interpersonal skills with a proven ability to work independently and as part of a team. My passion lies in contributing to dynamic environment, adding value to organizations and leveraging my abilities to drive impactful results.
+
+
+Certainly! Here are 15 professional summaries for a Business Analyst with 1 year of experience:
+
+1. **Analytical Business Analyst** with 1 year of experience in data-driven decision-making. Proficient in data extraction, visualization, and process optimization. Seeking opportunities to drive business growth through actionable insights.
+
+2. **Results-Driven Business Analyst** with a year of experience in financial analysis and process improvement. Skilled in SQL, Excel, and Tableau. Passionate about translating data into strategic recommendations for stakeholders.
+
+3. **Detail-Oriented Business Analyst** with 1 year of experience in market research and trend analysis. Adept at identifying patterns and providing actionable recommendations. Seeking a role to contribute to data-driven business strategies.
+
+4. **Business Intelligence Analyst** with 1 year of experience in data modeling and reporting. Proficient in Power BI and SQL. Passionate about transforming raw data into meaningful insights for informed decision-making.
+
+5. **Junior Business Analyst** with a year of experience in requirements gathering and process mapping. Collaborative team player with strong communication skills. Eager to contribute to project success through data-driven insights.
+
+
+
+
+Self motivated and 
+Certainly! Here are 15 professional summaries for a resume across various roles and experiences:
+
+1. **Software Engineer**:
+   - "Results-driven software engineer with 3 years of experience in full-stack development. Proficient in Python, JavaScript, and cloud technologies. Passionate about creating efficient, scalable solutions."
+
+2. **Marketing Manager**:
+   - "Strategic marketing manager with 5 years of experience in B2B tech. Skilled in campaign planning, lead generation, and data analysis. Adept at driving brand awareness and customer engagement."
+
+3. **Financial Analyst**:
+   - "Detail-oriented financial analyst with 2 years of experience in budgeting and forecasting. Proficient in Excel, SQL, and financial modeling. Committed to optimizing financial performance."
+
+4. **Human Resources Specialist**:
+   - "HR professional with 4 years of experience in talent acquisition and employee relations. Strong communication skills and a track record of building high-performing teams."
+
+5. **Data Scientist**:
+   - "Data scientist with 3 years of experience in machine learning and predictive modeling. Proficient in Python, R, and data visualization. Passionate about uncovering actionable insights."
+
+6. **Project Manager**:
+   - "Certified project manager with 6 years of experience leading cross-functional teams. Skilled in Agile methodologies and stakeholder communication. Committed to delivering on-time, high-quality projects."
+
+7. **Sales Representative**:
+   - "Results-oriented sales professional with 4 years of experience in B2C sales. Proven track record of exceeding targets and building strong client relationships."
+
+8. **UX/UI Designer**:
+   - "Creative UX/UI designer with 3 years of experience in user-centered design. Proficient in Sketch, Figma, and prototyping tools. Passionate about creating intuitive, visually appealing interfaces."
+
+9. **Supply Chain Analyst**:
+   - "Analytical supply chain analyst with 2 years of experience optimizing inventory management. Skilled in demand forecasting and logistics coordination."
+
+10. **Content Writer**:
+    - "Versatile content writer with 5 years of experience across web, social media, and print. Strong storytelling skills and SEO expertise."
+
+11. **Customer Service Manager**:
+    - "Customer-centric manager with 7 years of experience in call center operations. Skilled in team leadership, process improvement, and customer satisfaction."
+
+12. **Healthcare Administrator**:
+    - "Experienced healthcare administrator with 8 years in hospital administration. Proficient in compliance, budgeting, and patient care coordination."
+
+13. **Graphic Designer**:
+    - "Creative graphic designer with 4 years of experience in branding and visual communication. Proficient in Adobe Creative Suite and responsive design."
+
+14. **Product Manager**:
+    - "Innovative product manager with 5 years of experience in software development. Skilled in product roadmapping, user research, and agile delivery."
+
+15. **Research Scientist**:
+    - "Dedicated research scientist with a Ph.D. in biology and 3 years of postdoctoral experience. Proficient in experimental design, data analysis, and scientific writing."
+
+Feel free to adapt these summaries to your specific background and career goals! 🌟📊
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+5.Export and share.	
