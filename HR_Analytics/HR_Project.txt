@@ -1,0 +1,4 @@
+Project Objective: Help an organization to improve Employee Performance and improve employee retention (reduce attrition) by creating a HR analytics dashboard.
+
+What are the key factors for employees leaving the company.
+ 
