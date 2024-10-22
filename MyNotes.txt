@@ -1,5 +1,5 @@
  Data Analysis Projects : https://www.youtube.com/watch?v=TM4O9x8kBvg
-
+1.Prediction Model
 2.Data Analysis using Python
 3.SQL Data Analysis
 4.Power BI Dashboard Project
